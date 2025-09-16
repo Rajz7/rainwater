@@ -127,7 +127,7 @@ const LandingPage = () => {
           <a href="#privacy" className="lp-footer-link">Privacy Policy</a>
           <a href="#faqs" className="lp-footer-link">FAQs</a>
         </nav>
-        <div className="lp-footer-company">Rain Harvest Co. &copy; 2025</div>
+        <div className="lp-footer-company">ZBit. &copy; 2025</div>
       </footer>
     </div>
   );
