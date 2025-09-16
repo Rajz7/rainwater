@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginPage.css";
+import Dashboard from "./Dashboard";  // Import your Dashboard component
 
 const LoginPage = () => {
+  const [showDashboard, setShowDashboard] = useState(false);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // For testing, just show Dashboard no matter the input
+    setShowDashboard(true);
+  };
+
+  if (showDashboard) {
+    return <Dashboard />;
+  }
+
   return (
     <main className="lp-container lp-main">
       <section className="lp-section lp-login-section">
         <h2 className="lp-section-title">Login to Your Account</h2>
-        <form className="lp-form" aria-label="Login form">
+        <form className="lp-form" aria-label="Login form" onSubmit={handleLogin}>
           <input
             className="lp-input"
             type="email"
             name="email"
             placeholder="Email address"
-            required
             aria-required="true"
             aria-label="Email address"
           />
@@ -21,7 +33,6 @@ const LoginPage = () => {
             type="password"
             name="password"
             placeholder="Password"
-            required
             aria-required="true"
             aria-label="Password"
           />
