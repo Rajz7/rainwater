@@ -1,8 +1,171 @@
+/* CSS Variables */
+:root {
+  --max-width: 1200px;
+  --color-dark: #1f2937;
+  --color-primary: #4f46e5;
+  --color-primary-light: #a5b4fc;
+  --color-primary-dark: #4c51bf;
+  --color-muted: #6b7280;
+  --color-card: #ffffff;
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --font-main: system-ui, -apple-system, sans-serif;
+  --font-alt: system-ui, -apple-system, sans-serif;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: #fafbfc;
+}
+
+.lp-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Header/Navbar Styles - FIXED */
+.lp-navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #fff;
+  border-bottom: 1px solid #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.lp-logo {
+  display: flex;
+  align-items: center;
+}
+
+.lp-logo-text {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  font-family: var(--font-alt);
+}
+
+.lp-nav-menu {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.lp-link {
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color var(--transition);
+  padding: 0.5rem 0;
+}
+
+.lp-link:hover {
+  color: var(--color-primary);
+}
+
+.lp-nav-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Button Styles - FIXED */
+.lp-btn {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.lp-primary-btn {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.lp-primary-btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+.lp-login-btn {
+  background: transparent;
+  color: var(--color-dark);
+  border: 2px solid transparent;
+}
+
+.lp-login-btn:hover {
+  background: #f8fafc;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.lp-signup-btn {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.lp-signup-btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+.lp-google-btn {
+  background: #fff;
+  color: var(--color-dark);
+  border: 2px solid #e5e7eb;
+}
+
+.lp-google-btn:hover {
+  background: #f9fafb;
+  border-color: var(--color-primary);
+}
+
+.lp-btn-text {
+  margin-left: 0.5rem;
+}
+
 /* Hero section */
 .lp-hero {
   max-width: var(--max-width);
   margin: 3rem auto 4rem auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -47,7 +210,7 @@
   flex-wrap: nowrap;
   gap: 2rem;
   overflow-x: auto;
-  padding: 1.5rem 0;
+  padding: 1.5rem 2rem;
   margin: 0 auto 4rem auto;
   max-width: var(--max-width);
   scroll-behavior: smooth;
@@ -104,6 +267,17 @@
   object-fit: contain;
 }
 
+.lp-card-emoji {
+  font-size: 3rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.1);
+}
+
 .lp-card-title {
   font-size: 1.3rem;
   font-weight: 800;
@@ -119,14 +293,24 @@
   line-height: 1.6;
 }
 
-/* Facts/Stats Cards */
+/* Facts/Stats Cards - MOBILE RESPONSIVE FIXED */
 .lp-fact-cards {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin: 2rem 0;
-  flex-wrap: wrap;
   width: 100%;
   max-width: 100%;
+  padding: 0;
+}
+
+/* Ensure fact cards don't overflow */
+.lp-fact-cards .lp-card {
+  flex: none;
+  max-width: 100%;
+  min-width: 280px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /* Section Styles */
@@ -160,9 +344,14 @@
   font-weight: 500;
 }
 
+.lp-highlight {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
 /* About Us Section */
 .lp-about {
-  background: #eef2ff; /* very light indigo tint for subtle contrast */
+  background: #eef2ff;
   border-radius: var(--radius);
   padding: 3rem 2rem;
   box-shadow: 0 8px 30px rgba(79, 70, 229, 0.1);
@@ -242,6 +431,7 @@
   background: #f9fafb;
   font-family: var(--font-main);
   transition: border-color var(--transition);
+  resize: vertical;
 }
 
 .lp-input::placeholder {
@@ -305,4 +495,94 @@
   opacity: 0.85;
   flex-shrink: 0;
   white-space: nowrap;
+}
+
+/* Mobile Responsiveness - COMPLETE FIX */
+@media (max-width: 768px) {
+  .lp-navbar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .lp-nav-menu {
+    gap: 1.5rem;
+    justify-content: center;
+    order: 2;
+  }
+  
+  .lp-nav-actions {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .lp-hero {
+    margin: 2rem auto 3rem auto;
+    text-align: center;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  
+  .lp-hero-actions {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .lp-fact-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .lp-fact-cards .lp-card {
+    min-width: unset;
+    max-width: 100%;
+  }
+  
+  .lp-section {
+    padding: 2rem 1rem;
+    margin: 0 auto 2rem auto;
+  }
+  
+  .lp-about ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .lp-about ul li {
+    min-width: unset;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .lp-card-grid {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lp-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  
+  .lp-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .lp-hero-actions .lp-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .lp-nav-menu {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .lp-hero {
+    padding: 0 0.5rem;
+  }
 }
