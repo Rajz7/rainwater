@@ -1,0 +1,87 @@
+/* SignupPage.css */
+
+.lp-signup-section {
+  max-width: 420px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-family: var(--font-main);
+}
+
+.lp-signup-section .lp-section-title {
+  font-family: var(--font-alt);
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.lp-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.lp-input {
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius);
+  padding: 0.9em 1.25em;
+  font-size: 1.1rem;
+  background: #f9fafb;
+  transition: border-color var(--transition);
+  font-family: var(--font-main);
+}
+
+.lp-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: #fff;
+}
+
+.lp-btn {
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  user-select: none;
+  width: 100%;
+  text-align: center;
+  border: none;
+}
+
+.lp-primary-btn {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
+}
+
+.lp-primary-btn:hover,
+.lp-primary-btn:focus {
+  background: var(--color-primary-light);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.lp-google-btn {
+  background: linear-gradient(90deg, #f97316, #f59e0b);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3);
+}
+
+.lp-google-btn:hover,
+.lp-google-btn:focus {
+  background: linear-gradient(90deg, #ef4444, #fbbf24);
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);
+  transform: scale(1.05);
+  outline: none;
+}

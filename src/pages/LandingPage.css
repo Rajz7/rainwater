@@ -1,0 +1,308 @@
+/* Hero section */
+.lp-hero {
+  max-width: var(--max-width);
+  margin: 3rem auto 4rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.3;
+}
+
+.lp-hero-title {
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--color-dark);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.03em;
+  font-family: var(--font-alt);
+}
+
+.lp-rwh {
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--color-dark), var(--color-primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.lp-hero-desc {
+  font-size: 1.3rem;
+  color: var(--color-muted);
+  margin: 0 0 2rem;
+  max-width: 540px;
+  font-weight: 500;
+}
+
+.lp-hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Card layout with horizontal scroll */
+.lp-card-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1.5rem 0;
+  margin: 0 auto 4rem auto;
+  max-width: var(--max-width);
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lp-card-grid::-webkit-scrollbar {
+  height: 9px;
+}
+
+.lp-card-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lp-card-grid::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 8px;
+}
+
+.lp-card {
+  flex: 0 0 320px;
+  max-width: 320px;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.15);
+  padding: 2.3rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 280px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: grab;
+}
+
+.lp-card:hover,
+.lp-card:focus {
+  box-shadow: 0 14px 40px rgba(79, 70, 229, 0.3);
+  transform: translateY(-8px);
+  outline: none;
+  cursor: pointer;
+}
+
+.lp-card:active {
+  cursor: grabbing;
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4);
+}
+
+.lp-card-icon img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.lp-card-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.6em;
+  font-family: var(--font-alt);
+}
+
+.lp-card-desc {
+  color: var(--color-dark);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Facts/Stats Cards */
+.lp-fact-cards {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Section Styles */
+.lp-section {
+  max-width: var(--max-width);
+  margin: 0 auto 3rem auto;
+  padding: 3rem 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  width: 100%;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+}
+
+.lp-section-title, .lp-about h2, .lp-contact h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: var(--color-dark);
+  font-family: var(--font-alt);
+  text-align: center;
+}
+
+.lp-section-desc {
+  color: var(--color-muted);
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+/* About Us Section */
+.lp-about {
+  background: #eef2ff; /* very light indigo tint for subtle contrast */
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.1);
+  max-width: 900px;
+  margin: 3rem auto 4rem auto;
+  text-align: center;
+  font-weight: 500;
+  color: var(--color-dark);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-family: var(--font-main);
+  position: relative;
+}
+
+.lp-about h2 {
+  font-family: var(--font-alt);
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.lp-about p {
+  margin-bottom: 2rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-dark);
+}
+
+.lp-about ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.lp-about ul li {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.09);
+  padding: 0.8rem 1.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 190px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.lp-about ul li:hover,
+.lp-about ul li:focus {
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.2);
+  transform: translateY(-4px);
+  outline: none;
+}
+
+/* Contact form */
+.lp-contact form.lp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.lp-input {
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius);
+  padding: 0.85em 1.1em;
+  font-size: 1.05rem;
+  background: #f9fafb;
+  font-family: var(--font-main);
+  transition: border-color var(--transition);
+}
+
+.lp-input::placeholder {
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.lp-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  background: #fff;
+}
+
+/* Footer */
+.lp-footer {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 4rem auto 0 auto;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 2.5rem;
+  flex-wrap: wrap;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.5);
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: var(--font-alt);
+}
+
+.lp-footer nav {
+  display: flex;
+  gap: 2.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+  margin-bottom: 0.7rem;
+}
+
+.lp-footer-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color var(--transition);
+  font-weight: 600;
+  user-select: none;
+}
+
+.lp-footer-link:hover,
+.lp-footer-link:focus {
+  color: var(--color-primary-light);
+  outline: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.lp-footer-company {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.85;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
