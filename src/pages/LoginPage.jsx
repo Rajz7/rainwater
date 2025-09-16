@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
-import Dashboard from "./Dashboard";  // Import your Dashboard component
 
 const LoginPage = () => {
-  const [showDashboard, setShowDashboard] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // For testing, just show Dashboard no matter the input
-    setShowDashboard(true);
+    // For testing, just navigate to dashboard
+    navigate("/dashboard");
   };
-
-  if (showDashboard) {
-    return <Dashboard />;
-  }
 
   return (
     <main className="lp-container lp-main">
@@ -36,9 +32,7 @@ const LoginPage = () => {
             aria-required="true"
             aria-label="Password"
           />
-          <button type="submit" className="lp-btn lp-primary-btn">
-            Log In
-          </button>
+          <button type="submit" className="lp-btn lp-primary-btn">Log In</button>
           <button type="button" className="lp-btn lp-google-btn">
             Log in with Google
           </button>

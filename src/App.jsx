@@ -4,6 +4,8 @@ import LandingPage from "./pages/LandingPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
+import ReportPage from "./pages/ReportPage.jsx";
+
 const App = () => {
   return (
     <Router>
@@ -12,6 +14,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/reportpage" element={<ReportPage/>} />
       </Routes>
     </Router>
   );

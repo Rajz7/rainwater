@@ -1,15 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
+import ReportPage from "./ReportPage"; // Import your ReportPage
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  const [locationMode, setLocationMode] = useState("manual"); // "auto", "map", "manual"
+  const [locationMode, setLocationMode] = useState("manual");
   const [location, setLocation] = useState("");
   const [roofArea, setRoofArea] = useState("");
   const [budget, setBudget] = useState("");
   const [height, setHeight] = useState("");
+  const [showReport, setShowReport] = useState(false);
   const googleMapRef = useRef(null);
 
-  // Auto detect location handler
   const handleAutoDetect = () => {
     if (!navigator.geolocation) {
       alert("Geolocation not supported");
@@ -25,14 +26,18 @@ const Dashboard = () => {
     );
   };
 
-  // You can implement a Google Maps embed or interactive picker here
-  // For sample, just iframe Google Maps with place marker for chosen location
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowReport(true);
+  };
 
-  // Roof area calculated externally on map - user enters text or can select on Google Earth iframe
+  if (showReport) {
+    return <ReportPage />;
+  }
 
   return (
     <div className="dashboard-container">
-      <form className="dashboard-form" onSubmit={(e) => e.preventDefault()}>
+      <form className="dashboard-form" onSubmit={handleSubmit}>
         {/* Location Input */}
         <div className="form-group location-group">
           <label>Enter your Location</label>
@@ -67,7 +72,7 @@ const Dashboard = () => {
               allowFullScreen
               loading="lazy"
               style={{ border: 0 }}
-            ></iframe>
+            />
           )}
         </div>
 
